@@ -6,14 +6,6 @@ import Signin from './pages/Signin.jsx';
 import SignUp from './pages/Signup.jsx';
 import Home from './pages/Home.jsx';
 
-function Layout(){
-  return(
-    <>
-    <Header />
-    <Home />
-    </>
-  )
-}
 
 function App() {
 
@@ -21,7 +13,7 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Layout />} />
+      <Route path="/" element={ <Home/> } />
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<SignUp />} />
     </Routes>
