@@ -52,7 +52,7 @@ function Home() {
   }, [page]);
 
   return (
-    <div className="mt-20 bg-gradient-to-br from-pink-50 to-rose-50 min-h-screen py-6">
+    <div className="mt-18 bg-gray-100 min-h-screen py-6">
       {error && (
         <div className="text-red-500 text-center mb-4">{error}</div>
       )}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, Menu, Sun, Moon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = ({ onCategoryChange, onCountryChange, onThemeToggle }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,11 +27,11 @@ const Header = ({ onCategoryChange, onCountryChange, onThemeToggle }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-pink-300 z-50">
-      <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <header className="fixed top-0 left-0 w-full bg-white z-50 border-2">
+      <nav className="container mx-auto px-2">
+        <div className="flex items-center justify-between h-16 mb-2">
           {/* Logo */}
-          <h1 className="text-2xl font-bold text-white">News_Aggregator</h1>
+          <h1 className="text-2xl font-bold text-black">FeedFusion</h1>
 
           {/* Mobile menu button */}
           <button 
@@ -45,16 +46,22 @@ const Header = ({ onCategoryChange, onCountryChange, onThemeToggle }) => {
             <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 p-4 lg:p-0">
               {/* All News */}
               <li>
-                <button className="text-white hover:text-rose-300 font-semibold" 
+                <button className="text-black hover:text-rose-300 font-semibold" 
                   onClick={() => onCategoryChange('all')}>
-                  All News
+                  Top Headlines
                 </button>
+              </li>
+
+              <li>
+                <Link to="/signin">
+                <button className='text-black hover:text-rose-300 font-semibold'> SignIn </button>
+                </Link>
               </li>
 
               {/* Categories Dropdown */}
               <li className="relative">
                 <button 
-                  className="flex items-center space-x-1 text-white hover:text-rose-300 font-semibold"
+                  className="flex items-center space-x-1 text-black hover:text-rose-300 font-semibold"
                   onClick={() => {
                     setShowCategoryDropdown(!showCategoryDropdown);
                     setShowCountryDropdown(false);
@@ -86,7 +93,7 @@ const Header = ({ onCategoryChange, onCountryChange, onThemeToggle }) => {
               {/* Countries Dropdown */}
               <li className="relative">
                 <button 
-                  className="flex items-center space-x-1 text-white hover:text-rose-300 font-semibold"
+                  className="flex items-center space-x-1 text-black hover:text-rose-300 font-semibold"
                   onClick={() => {
                     setShowCountryDropdown(!showCountryDropdown);
                     setShowCategoryDropdown(false);
@@ -118,7 +125,7 @@ const Header = ({ onCategoryChange, onCountryChange, onThemeToggle }) => {
               {/* Theme Toggle */}
               <li>
                 <button 
-                  className="text-white hover:text-rose-300"
+                  className="text-black hover:text-rose-300"
                   onClick={handleThemeToggle}
                 >
                   {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
